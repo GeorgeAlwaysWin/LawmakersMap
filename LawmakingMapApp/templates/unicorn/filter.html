@@ -1,0 +1,37 @@
+<div class="filterBlock" style="width: {{ width_percent }}vw;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.min.css" integrity="sha512-wCrId7bUEl7j1H60Jcn4imkkiIYRcoyq5Gcu3bpKAZYBJXHVMmkL4rhtyhelxSFuPMIoQjiVsanrHxcs2euu/w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <button unicorn:click="hide" style="
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    "
+    class="hideBtn">
+        {{ btnMark }}
+    </button>
+    <label for="blockType">Блок</label><br>
+    <input list="blockType" class="selectBox">
+    <datalist id="blockType">
+     <option value="">Блок</option>
+     <option value="US">Федеральные органы власти</option>
+     <option value="KE">Адыгея</option>
+     <option value="UK">Астрахань</option>
+  </datalist>
+    <label for="lawmaker">Принявший орган</label><br>
+    <input list="lawmaker" class="selectBox">
+    <datalist id="lawmaker" >
+     <option value="">Принявший орган</option>
+     <option value="US">Федеральные органы власти</option>
+     <option value="KE">Адыгея</option>
+     <option value="UK">Астрахань</option>
+  </datalist>
+    <label for="subject">Субъект</label><br>
+    <input list="subject" class="selectBox">
+    <datalist id="subject">
+     <option value="">Субъект</option>
+     <option value="US">Федеральные органы власти</option>
+     <option value="KE">Адыгея</option>
+     <option value="UK">Астрахань</option>
+  </datalist>
+
+</div>
