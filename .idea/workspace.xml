@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="721b0938-2c6b-4d84-9025-4c2148296fa0" name="Changes" comment="Django init">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LawmakingMapApp/components/filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LawmakingMapApp/components/map_yandex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LawmakingMapApp/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LawmakingMapApp/templates/unicorn/filter.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LawmakingMapApp/templates/unicorn/map_yandex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LawmakingMapApp/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/djangoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LawmakersMap.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="721b0938-2c6b-4d84-9025-4c2148296fa0" name="Changes" comment="Draws map and some interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LawmakingMapApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LawmakingMapApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LawmakingMapApp/components/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/LawmakingMapApp/components/filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LawmakingMapApp/components/map_yandex.py" beforeDir="false" afterPath="$PROJECT_DIR$/LawmakingMapApp/components/map_yandex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LawmakingMapApp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/LawmakingMapApp/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LawmakingMapApp/templates/unicorn/filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/LawmakingMapApp/templates/unicorn/filter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LawmakingMapApp/templates/unicorn/map_yandex.html" beforeDir="false" afterPath="$PROJECT_DIR$/LawmakingMapApp/templates/unicorn/map_yandex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +27,7 @@
         <option value="Python Script" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -63,33 +55,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.djangoProject.executor": "Run",
-    "Python.manage.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Georgii/PycharmProjects/codeTest/codeTestApp/templates",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.djangoProject.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Georgii/PycharmProjects/codeTest/codeTestApp/templates&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Georgii\PycharmProjects\djangoProject\static\css" />
@@ -142,7 +134,13 @@
       <updated>1740847478221</updated>
       <workItem from="1740847512683" duration="2595000" />
       <workItem from="1740850172102" duration="11397000" />
-      <workItem from="1740900007177" duration="17929000" />
+      <workItem from="1740900007177" duration="37298000" />
+      <workItem from="1741196038641" duration="1580000" />
+      <workItem from="1741197866075" duration="5696000" />
+      <workItem from="1741281909504" duration="5152000" />
+      <workItem from="1741289317854" duration="786000" />
+      <workItem from="1741290208219" duration="1000" />
+      <workItem from="1741291217110" duration="342000" />
     </task>
     <task id="LOCAL-00001" summary="Django init">
       <option name="closed" value="true" />
@@ -160,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740849162913</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Draws map and some interface">
+      <option name="closed" value="true" />
+      <created>1740922472154</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1740922472155</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,15 +174,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Django init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Django init" />
+    <MESSAGE value="Draws map and some interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Draws map and some interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/LawmakingMapApp/components/filter.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
+          <line>38</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/LawmakingMapApp/components/filter.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/LawmakingMapApp/components/filter.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

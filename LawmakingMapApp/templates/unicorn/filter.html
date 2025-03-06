@@ -1,5 +1,5 @@
 <div class="filterBlock" style="width: {{ width_percent }}vw;">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.min.css" integrity="sha512-wCrId7bUEl7j1H60Jcn4imkkiIYRcoyq5Gcu3bpKAZYBJXHVMmkL4rhtyhelxSFuPMIoQjiVsanrHxcs2euu/w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.min.css" integrity="sha512-wCrId7bUEl7j1H60Jcn4imkkiIYRcoyq5Gcu3bpKAZYBJXHVMmkL4rhtyhelxSFuPMIoQjiVsanrHxcs2euu/w==" crossorigin="anonymous" referrerpolicy=""/>
 
     <button unicorn:click="hide" style="
     position: absolute;
@@ -9,29 +9,42 @@
     class="hideBtn">
         {{ btnMark }}
     </button>
+
     <label for="blockType">Блок</label><br>
-    <input list="blockType" class="selectBox">
+    <input onfocus="Unicorn.call('filter', 'get_blocks')" list="blockType" class="selectBox" unicorn:model="blockName">
     <datalist id="blockType">
-     <option value="">Блок</option>
-     <option value="US">Федеральные органы власти</option>
-     <option value="KE">Адыгея</option>
-     <option value="UK">Астрахань</option>
+        {% if blocks %}
+            {% for key, value in blocks.items %}
+            <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+        {% endif %}
   </datalist>
-    <label for="lawmaker">Принявший орган</label><br>
-    <input list="lawmaker" class="selectBox">
-    <datalist id="lawmaker" >
-     <option value="">Принявший орган</option>
-     <option value="US">Федеральные органы власти</option>
-     <option value="KE">Адыгея</option>
-     <option value="UK">Астрахань</option>
+    <label for="categories_list">Категория</label><br>
+    <input onfocus="Unicorn.call('filter', 'get_categories')" list="categories_list" class="selectBox" unicorn:model="categoryName">
+    <datalist id="categories_list" >
+        {% if categories %}
+            {% for name, code in categories.items %}
+            <option value="{{ name }}">{{ code }}</option>
+            {% endfor %}
+        {% endif %}
   </datalist>
-    <label for="subject">Субъект</label><br>
-    <input list="subject" class="selectBox">
-    <datalist id="subject">
-     <option value="">Субъект</option>
-     <option value="US">Федеральные органы власти</option>
-     <option value="KE">Адыгея</option>
-     <option value="UK">Астрахань</option>
+    <label for="lawmakers">Принявший орган</label><br>
+    <input id="lawmaker" onfocus="Unicorn.call('filter', 'get_authorities')" list="lawmakers" class="selectBox" unicorn:model="authorityName">
+    <datalist id="lawmakers" >
+        {% if authorities %}
+            {% for name, id in authorities.items %}
+            <option value="{{ name }}">{{ id }}</option>
+            {% endfor %}
+        {% endif %}
   </datalist>
+
+    <button unicorn:click="get_docs" class="actionBtn">
+        Показать
+    </button>
+
+    <button onclick="Unicorn.call('map_yandex', 'setMarker')" class="actionBtn">
+        Маркер
+    </button>
+
 
 </div>

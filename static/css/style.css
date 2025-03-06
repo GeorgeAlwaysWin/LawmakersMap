@@ -35,6 +35,18 @@
 
 }
 
+.actionBtn{
+    background: var(--redClr);
+    color: var(--whiteClr);
+    display: block;
+    width: 60%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    overflow: hidden;
+}
+
 label {
     margin-top: 5px;
     padding-top: 5px;

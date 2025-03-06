@@ -1,7 +1,15 @@
-
 <div id="map" style="width: 100vw; height: 100vh; box-sizing: content-box; z-index: 0; position: absolute">
-        <script src="https://api-maps.yandex.ru/v3/?apikey=e519bd9b-9dd5-405d-b96a-54fca8fd861d&lang=ru_RU"></script>
+
     <script>
+        Object.defineProperty(document, "referrer", {get : function (){"localhost"}})
+    </script>
+
+    <script src="https://api-maps.yandex.ru/v3/?apikey=e519bd9b-9dd5-405d-b96a-54fca8fd861d&lang=ru_RU"></script>
+<a href="https://www.whatismybrowser.com/detect/what-is-my-referrer/" target="_blank">HTTP Referrer Test Page</a>
+
+    <script>
+        window.map = null;
+
         initMap();
 
         async function initMap() {
@@ -13,13 +21,33 @@
                 document.getElementById('map'),
                 {
                     location: {
-                        center: [37.588144, 55.733842],
-                        zoom: 10
+                        center: [94.15, 64.25],
+                        zoom: 4
                     }
                 }
             );
 
             map.addChild(new YMapDefaultSchemeLayer());
+
+            return map
+        }
+
+        async function addMarker(){
+           const markerElement = document.createElement('div');
+           markerElement.className = 'marker-class';
+           markerElement.innerText = "I'm marker!";
+
+           const marker = new YMapMarker(
+             {
+               source: 'markerSource',
+               coordinates: [94.15, 64.25],
+               draggable: true,
+               mapFollowsOnDrag: true
+             },
+             markerElement
+           );
+
+           map.addChild(marker);
         }
     </script>
 </div>
