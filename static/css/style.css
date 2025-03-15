@@ -1,0 +1,62 @@
+:root{
+    --blueClr: #003399;
+    --lightBlueClr: #3399CC;
+    --whiteClr: #EBEEF1;
+    --blackClr: #151212;
+    --redClr: #FF0000;
+}
+
+.hideBtn{
+    --widthBtn: 10px;
+    text-align: center;
+    width: fit-content;
+    aspect-ratio: 1/1;
+    font-size: 12pt;
+    border-radius: 50%;
+    background: var(--blueClr);
+    color: var(--whiteClr);
+}
+
+.filterBlock{
+    background: var(--lightBlueClr);
+    position: relative;
+    height: 90vh;
+    float: right;
+    z-index: 1;
+    top: 0;
+}
+
+.selectBox{
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: 1vw;
+    overflow: hidden;
+
+}
+
+.actionBtn{
+    background: var(--redClr);
+    color: var(--whiteClr);
+    display: block;
+    width: 60%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    overflow: hidden;
+}
+
+iframe{
+    background: var(--whiteClr);
+}
+
+
+label {
+    margin-top: 5px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 1vw;
+    overflow: hidden;
+}
+

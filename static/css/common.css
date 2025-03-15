@@ -1,0 +1,95 @@
+.circle {
+    cursor: pointer;
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    color: var(--interact-action);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%);
+}
+
+.circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    height: 90%;
+
+    border-radius: 50%;
+    background-color: currentColor;
+
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.circle-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #fff;
+}
+
+.image {
+    transition: scale 0.3s ease-out;
+}
+
+.image:hover {
+    scale: 1.1;
+}
+
+.marker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.marker {
+    overflow: hidden;
+    border: 1px solid #ffffff;
+    border-radius: 16px;
+    width: 52px;
+    display: flex;
+    justify-content: center;
+    height: 52px;
+    transition: border-width 0.3s linear;
+    box-sizing: content-box;
+}
+
+.marker:hover {
+    border-width: 2px;
+    box-shadow: 0px 2px 4px 0px #5f698333;
+}
+
+.marker-text {
+    color: #050d33;
+    font-weight: 500;
+    font-size: 14px;
+    top: -27px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 8px;
+    transition: all 0.3s ease-out;
+}
+
+.marker-text.visible {
+    opacity: 1;
+    padding: 4px 8px;
+    transform: translateY(0);
+}
+
+.marker-text.hidden {
+    opacity: 0;
+    padding: 4px 0;
+    transform: translateY(4px);
+}

@@ -1,0 +1,49 @@
+<div id="filter_div" class="filterBlock" style="width: {{ width_percent }}vw;     height: 90vh;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.min.css" integrity="sha512-wCrId7bUEl7j1H60Jcn4imkkiIYRcoyq5Gcu3bpKAZYBJXHVMmkL4rhtyhelxSFuPMIoQjiVsanrHxcs2euu/w==" crossorigin="anonymous" referrerpolicy=""/>
+
+    <button unicorn:click="hide" style="
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    "
+    class="hideBtn">
+        {{ btnMark }}
+    </button>
+
+    <label for="blockType">Блок</label><br>
+    <input list="blockType" class="selectBox" unicorn:model.lazy="blockName">
+    <datalist id="blockType">
+        {% if blocks %}
+            {% for key, value in blocks.items %}
+            <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+        {% endif %}
+  </datalist>
+    <label for="categories_list">Категория</label><br>
+    <input list="categories_list" class="selectBox" unicorn:model.lazy="categoryName">
+    <datalist id="categories_list" >
+        {% if categories %}
+            {% for key, value in categories.items %}
+            <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+        {% endif %}
+  </datalist>
+
+
+    <button id="load_objects" class="actionBtn" unicorn:click="update">
+        Обновить
+    </button>
+
+    <button id="update_map" class="actionBtn" unicorn.loading.attr="disabled">
+        Показать
+    </button>
+    <a href="http://publication.pravo.gov.ru/OpenData">Официальное опубликование правовых актов</a>
+    <br>
+    <iframe id="documents" class="documentBlock" style="
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        min-height: 60%;
+        width: 95%
+    "></iframe>
+</div>
