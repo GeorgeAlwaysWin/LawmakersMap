@@ -14,6 +14,12 @@
 padding: 0;
 overflow: hidden;
 ">
+     <div style="position: absolute;
+    font-size: xxx-large;
+    color: var(--blueClr);
+-webkit-text-stroke-color: var(--redClr);
+-webkit-text-stroke-width: 1px;
+z-index: 3">Законодательные органы РФ</div>
     {% csrf_token %}
     {% unicorn 'map_yandex' %}
     {% unicorn 'filter' %}

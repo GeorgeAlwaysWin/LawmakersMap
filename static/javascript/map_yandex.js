@@ -124,7 +124,13 @@ async function main() {
   window.clusterer = clusterer;
   map.addChild(clusterer);
   document.getElementById('update_map').onclick = () => {
-    let lawmks = JSON.parse(document.getElementById("filter_div").getAttribute("unicorn:data"))['authorities'];
+    const newDiv = document.createElement("div");
+    newDiv.id = "loading_div";
+    const newContent = document.createTextNode("Загрузка");
+    newDiv.appendChild(newContent);
+    const upd_btn = document.getElementById('update_map');
+    upd_btn.appendChild(newDiv);
+    let lawmks = JSON.parse(document.getElementById('filter_div').getAttribute("unicorn:data"))['authorities'];
     window.names =  Object.keys(lawmks);
     window.attrs = Object.values(lawmks);
     // console.log(window.names);
@@ -136,4 +142,7 @@ async function main() {
 async function change_clusterer() {
   let points = await getPoints();
   window.clusterer.update({ features: points });
+  const upd_btn = document.getElementById('update_map');
+  const load_div = document.getElementById('loading_div');
+  upd_btn.removeChild(load_div);
 }

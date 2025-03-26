@@ -9,8 +9,10 @@
     class="hideBtn">
         {{ btnMark }}
     </button>
-
-    <label for="blockType">Блок</label><br>
+    <div style="margin-left: 10px">
+        Фильтры
+    </div>
+    <label for="blockType">Блок законодателей</label><br>
     <input list="blockType" class="selectBox" unicorn:model.lazy="blockName">
     <datalist id="blockType">
         {% if blocks %}
@@ -19,7 +21,7 @@
             {% endfor %}
         {% endif %}
   </datalist>
-    <label for="categories_list">Категория</label><br>
+    <label for="categories_list">Категория органов</label><br>
     <input list="categories_list" class="selectBox" unicorn:model.lazy="categoryName">
     <datalist id="categories_list" >
         {% if categories %}
@@ -30,12 +32,14 @@
   </datalist>
 
 
-    <button id="load_objects" class="actionBtn" unicorn:click="update">
-        Обновить
+    <button id="load_objects" class="actionBtn" unicorn:click="update" unicorn.loading.attr="disabled">
+        Применить фильтры 
     </button>
-
+    <div style="margin-left: 10px">
+        Обновите карту после внесения фильтров
+    </div>
     <button id="update_map" class="actionBtn" unicorn.loading.attr="disabled">
-        Показать
+        Обновить карту
     </button>
     <a href="http://publication.pravo.gov.ru/OpenData">Официальное опубликование правовых актов</a>
     <br>

@@ -69,10 +69,10 @@ class FilterView(UnicornView):
         if (self.upd):
             return
         self.upd = True
-        bl = ""
+        bl = []
         cat = ""
         if self.check_block():
-            bl[0] = f"block={self.blocks.get(self.blockName)}"
+            bl.append(f"{self.blocks.get(self.blockName)}")
         else:
             bl = self.blocks.values()
         if self.check_category():
@@ -114,7 +114,7 @@ class FilterView(UnicornView):
             return
         if self.btnMark == "<":
             self.btnMark = ">"
-            self.width_percent=20
+            self.width_percent=30
 
 
     def get_docs(self):
@@ -151,7 +151,9 @@ class FilterView(UnicornView):
         
     def update(self):
         self.get_categories()
+        if not self.check_category():
+            self.categoryName = ""
         self.get_authorities()
         
-    class Meta:
-        javascript_exclude = ("categories", "blocks",)
+    # class Meta:
+    #     javascript_exclude = ("categories", "blocks",)
